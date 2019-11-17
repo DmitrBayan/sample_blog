@@ -71,10 +71,10 @@ class UserTest < ActiveSupport::TestCase
       duplicate_user = @user.dup
       @user.save
       assert_not duplicate_user.valid?
-    end
+  end
 
-    test "authenticated? should return false for a user with nil digest" do
-      assert_not @user.authenticated?('')
-    end
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?(:remember, '')
+  end
 
 end
