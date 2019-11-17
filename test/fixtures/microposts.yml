@@ -3,16 +3,28 @@
 one:
   content: "First post"
   created_at: <%= 10.minutes.ago %>
+  user: dmitry_tester
 
 two:
   content: "Second post"
   created_at: <%= 3.years.ago %>
+  user: dmitry_tester
 
 three:
   content: "Third post"
   created_at: <%= 2.hours.ago %>
+  user: dmitry_tester
 
 four:
   content: "Fourth post"
   created_at: <%= Time.zone.now %>
+  user: vasya
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(word_count: 5) %>
+  created_at: <%= 42.days.ago %>
+  user: dmitry_tester
+<% end %>
+
   
